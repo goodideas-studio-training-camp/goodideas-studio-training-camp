@@ -9,6 +9,11 @@ just test for now.
   1. - [ ] 文章分類 nav / sidebar。
   1. - [ ] 高自由度版面配置。
 
+## tags
+
+- v1: 最基本，未改樣式，未安裝plugin，有 navbar, sidebar, search。
+- v2: install [`vuepress-plugin-git-log`](https://github.com/vuepress/vuepress-plugin-git-log)，讀取 git commit。vuepress 的 v2 版本是直接 build-in。
+
 ## Getting started
 
 #### use:

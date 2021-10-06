@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/G100my/goodideas-studio-blog#readme",
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-git-log": "^1.0.1"
   }
 }

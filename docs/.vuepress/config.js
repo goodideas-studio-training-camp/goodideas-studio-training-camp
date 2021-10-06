@@ -53,6 +53,13 @@ module.exports = {
           searchMaxSuggestions: 10,
         },
       ],
+      [
+        'git-log',
+        {
+          additionalArgs: '--no-merge',
+          onlyFirstAndLastCommit: true,
+        },
+      ],
     ],
   },
 }
