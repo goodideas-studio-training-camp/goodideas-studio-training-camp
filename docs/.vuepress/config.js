@@ -20,8 +20,8 @@ module.exports = {
       {
         text: 'two',
         items: [
-          { text: 'two - 文章 1', link: '/one' },
-          { text: 'two - 文章 2', link: '/two' },
+          { text: 'two - 文章 1', link: '/two/one' },
+          { text: 'two - 文章 2', link: '/two/two' },
         ],
       },
       {
@@ -29,6 +29,22 @@ module.exports = {
         link: '/wrongPath',
       },
       { text: 'G100 vuepress blog', link: 'https://g100my.github.io/G100-blog/' },
+    ],
+    displayAllHeaders: true,
+    sidebar: [
+      {
+        title: 'one', // 必要的
+        path: '/one/', // 可选的, 标题的跳转链接，应为绝对路径且必须存在
+        collapsable: false, // 可选的, 默认值是 true,
+        sidebarDepth: 1, // 可选的, 默认值是 1
+        children: ['/one/fake2', '/one/fake1'],
+      },
+      {
+        title: 'two',
+        children: ['/two/one', '/two/two'],
+        initialOpenGroupIndex: -1, // 可选的, 默认值是 0
+      },
+      { title: 'G100 vuepress blog', path: 'https://g100my.github.io/G100-blog/' },
     ],
   },
 }
