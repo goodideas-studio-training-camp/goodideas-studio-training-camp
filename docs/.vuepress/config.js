@@ -46,5 +46,13 @@ module.exports = {
       },
       { title: 'G100 vuepress blog', path: 'https://g100my.github.io/G100-blog/' },
     ],
+    plugins: [
+      [
+        '@vuepress/search',
+        {
+          searchMaxSuggestions: 10,
+        },
+      ],
+    ],
   },
 }
