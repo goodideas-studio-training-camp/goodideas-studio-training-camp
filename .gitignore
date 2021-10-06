@@ -1,0 +1,11 @@
+node_modules
+
+# vuepress
+.temp
+.cache
+
+# IDE
+workspace.code-workspace
+
+# test
+coverage/
