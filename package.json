@@ -1,0 +1,23 @@
+{
+  "name": "goodideas-studio-blog",
+  "version": "1.0.0",
+  "description": "just test for now.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G100my/goodideas-studio-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/G100my/goodideas-studio-blog/issues"
+  },
+  "homepage": "https://github.com/G100my/goodideas-studio-blog#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
