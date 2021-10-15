@@ -35,6 +35,12 @@ module.exports = {
       { text: 'G100 vuepress blog', link: 'https://g100my.github.io/G100-blog/' },
     ],
     sidebar: { ...makeSidebarRoute('one') },
+
+    // default 'true', no need to set up
+    // https://v2.vuepress.vuejs.org/reference/plugin/git.html#install
+    // createdTime: true,
+    // updatedTime: true,
+    // contributors: true,
   },
 
   plugins: [
