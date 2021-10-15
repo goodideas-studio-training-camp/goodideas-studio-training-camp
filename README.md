@@ -29,6 +29,6 @@ npm run build:  // vuepress build docs
 
 ### Directory Structure
 
-See [document](https://v1.vuepress.vuejs.org/zh/guide/directory-structure.html#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
+See [document v1](https://v1.vuepress.vuejs.org/zh/guide/directory-structure.html#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
+See [document v2](https://v2.vuepress.vuejs.org/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6) ← 這個版本是這個
 
-這是 v1 的文件，僅參考。
