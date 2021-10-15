@@ -1,8 +1,10 @@
+const { path } = require('@vuepress/utils')
 const { makeNavRoute, makeSidebarRoute } = require('../../utils/routeMaker')
 
 module.exports = {
   title: 'Hello VuePress',
   description: 'Just playing around',
+  theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     navbar: [
       { text: 'Home', link: '/' },
@@ -43,7 +45,5 @@ module.exports = {
     // contributors: true,
   },
 
-  plugins: [
-    [ '@vuepress/plugin-search', {} ],
-  ],
+  plugins: [['@vuepress/plugin-search', {}]],
 }
