@@ -9,3 +9,6 @@ workspace.code-workspace
 
 # test
 coverage/
+
+# used
+_*.*
