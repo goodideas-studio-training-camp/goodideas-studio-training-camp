@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <template #page-bottom>
-      <component v-for="contributor in contributors" :key="contributor.name" :is="authers[contributor.name]" />
+      <component v-for="contributor in pageData.git.contributors" :key="contributor.name" :is="authers[contributor.name]" />
     </template>
   </Layout>
 </template>
@@ -23,11 +23,9 @@ export default {
     console.log('pageData.value: ', pageData.value)
     console.log('pageData.value.git: ', pageData.value.git)
 
-    const contributors = pageData.value.git.contributors
-
     return {
-      contributors,
       authers,
+      pageData,
     }
   },
 }
