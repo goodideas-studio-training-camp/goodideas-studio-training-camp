@@ -2,6 +2,7 @@ const { path } = require('@vuepress/utils')
 const { makeNavRoute, makeSidebarRoute } = require('../../utils/routeMaker')
 
 module.exports = {
+  base: '/goodideas-studio-blog/',
   title: 'Hello VuePress',
   description: 'Just playing around',
   theme: path.resolve(__dirname, './theme'),
