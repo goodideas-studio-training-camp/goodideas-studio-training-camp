@@ -36,4 +36,8 @@ module.exports = {
     ],
     sidebar: { ...makeSidebarRoute('one') },
   },
+
+  plugins: [
+    [ '@vuepress/plugin-search', {} ],
+  ],
 }
