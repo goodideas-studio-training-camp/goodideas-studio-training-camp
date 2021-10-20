@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <template #page-bottom>
-      <component v-for="contributor in pageData.git.contributors" :key="contributor.name" :is="authers[contributor.name]" />
+      <div class="authers-container">
+        <component v-for="contributor in pageData.git.contributors" :key="contributor.name" :is="authers[contributor.name]" />
+      </div>
     </template>
   </Layout>
 </template>
@@ -30,3 +32,10 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.authers-container {
+  max-width: var(--content-width);
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+</style>
