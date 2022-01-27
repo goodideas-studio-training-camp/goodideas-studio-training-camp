@@ -1,34 +1,63 @@
-# good-idea-blog
+<p align='center'>
+  <img src='https://raw.githubusercontent.com/G100my/goodideas-studio-blog/main/docs/.vuepress/public/good-ideas.png' width='400'>
+</p>
 
-just test for now.
+<br>
 
-## Survay target:
+<h1 align='center'>好想工作室 - 共同技術筆記</h1>
 
-  1. - [ ] 能夠讓發文者的相關資訊(git account, personal blog)顯示在文章底下。
-  1. - [ ] 能快速設定 html head meta、或其他屬於文章範圍內的 meta (title, create date, tag, categories)。
-  1. - [ ] 文章分類 nav / sidebar。
-  1. - [ ] 高自由度版面配置。
+<br>
 
-## Getting started
+# 一起來寫文章吧！
 
-#### use:
+say something...
 
-- [vuepress **v2(next)**](https://v2.vuepress.vuejs.org/)
-- [vuepress github](https://github.com/vuepress)
+## 註冊你的作者簽名檔
 
-#### npm script:
+在 `/docs/.vuepress/authers` 底下建立一個檔名和自己 git.username 一樣的 `.vue`，內容請自訂。
 
-```test
-npm run dev     // vuepress dev docs
-npm run build:  // vuepress build docs
+## Post Article
+
+---
+
+## Folder Structure
+
+---
+
+## Dependency Document Links
+
+- [Vuepress@next](https://v2.vuepress.vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Vue 3](https://v3.vuejs.org/api/)
+- [Vue Router](https://next.router.vuejs.org/api/)
+- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) On-demand components auto importing for Vue.
+- [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) File system based route generator for Vite
+
+註：Vuepress 的 dependencies 已經包含 Vue, Vue router，為了讓 Vscode Intellisense 能偵測到，因此額外讓他出現在 package.json
+
+## Frequently Used
+
+---
+
+## Npm Script:
+
+```
+npm run doc     // vuepress dev docs （寫文章用的 local server）
+npm run build   // vuepress build docs
+npm run dev     // vite （一般開發用的 local server）
 ```
 
-:::warning Beward!
-如果更改 config.js，需要重啟 dev server
-:::
+開發環境有
 
-### Directory Structure
+- 用 vuepress 起的 local server，會以 Blog 呈現
+- 用 vite 起的 local server，以 SPA 呈現，方便開發 demo/blog component 的環境
+  - `vite-plugin-pages`: 自動從 'src/components' 載入 components 作為 route，
+  - `unplugin-vue-components`: 自動 import 所需要的 component
 
-See [document v1](https://v1.vuepress.vuejs.org/zh/guide/directory-structure.html#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
-See [document v2](https://v2.vuepress.vuejs.org/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6) ← 這個版本是這個
+**Beware: 如果改動到 config，請重啟 server。**
 
+---
+
+## Others
+
+- Markdown Parse Engine: `markdown-it`
