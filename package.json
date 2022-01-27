@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vuepress/plugin-search": "^2.0.0-beta.35",
     "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-vue": "^8.4.0",
     "prettier": "2.5.1",
     "vite": "^2.7.13",
