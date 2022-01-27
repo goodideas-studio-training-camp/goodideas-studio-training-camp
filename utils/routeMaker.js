@@ -8,7 +8,7 @@ function getAbsolutePath(folder) {
 /**
  * Custom nav bar Router maker
  * @param {*} folderName 資料夾名稱
- * @param {*} text 顯示在 nav 上面的文字
+ * @param {*} text (Optional) 顯示在 nav 上面的文字, 如果沒有，會是資料夾名稱
  * @returns { text: string, children: string[] }
  */
 function makeNavRoute(folderName, text) {
@@ -21,7 +21,10 @@ function makeNavRoute(folderName, text) {
       // 跳過 readme.md
       if (fileName.toLowerCase() === 'readme.md') return false
 
-      return fs.statSync(path.join(basePath, fileName)).isFile() && path.extname(fileName) === extension
+      return (
+        fs.statSync(path.join(basePath, fileName)).isFile() &&
+        path.extname(fileName) === extension
+      )
     })
     .map(fileName => `/${folderName}/${fileName}`)
   return [{ text: text ? text : folderName, children: [...files] }]
@@ -30,7 +33,7 @@ function makeNavRoute(folderName, text) {
 /**
  * Custom sidebar router maker
  * @param {*} folderName 資料夾名稱
- * @param {*} text 顯示在 sidebar 上的文字
+ * @param {*} text (Optional) 顯示在 nav 上面的文字, 如果沒有，會是資料夾名稱
  * @returns
  */
 function makeSidebarRoute(folderName, text) {
