@@ -5,5 +5,5 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   // https://github.com/antfu/unplugin-vue-components
-  plugins: [vue(), Components(), Pages({ dirs: 'src/views' })],
+  plugins: [vue(), Components(), Pages({ dirs: 'src/components' })],
 })
