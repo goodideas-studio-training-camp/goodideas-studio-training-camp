@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src='https://raw.githubusercontent.com/G100my/goodideas-studio-blog/main/docs/.vuepress/public/good-ideas.png' width='400'>
+  <img src='https://raw.githubusercontent.com/G100my/Goodideas-studio-blog/main/docs/.vuepress/public/good-ideas.png' width='400'>
 </p>
 
 <br>

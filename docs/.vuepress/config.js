@@ -2,7 +2,7 @@ const { path } = require('@vuepress/utils')
 const { makeNavRoute, makeSidebarRoute } = require('../../utils/routeMaker')
 
 module.exports = {
-  base: '/goodideas-studio-blog/',
+  base: '/Goodideas-studio-blog/',
   title: 'Hello VuePress',
   description: 'Just playing around',
   plugins: [['@vuepress/plugin-search', {}]],
