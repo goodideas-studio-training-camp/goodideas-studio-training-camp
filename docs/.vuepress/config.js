@@ -4,8 +4,8 @@ const defineUserConfig = require('vuepress').defineUserConfig
 
 module.exports = defineUserConfig({
   base: '/Goodideas-studio-blog/',
-  title: 'Hello VuePress',
-  description: 'Just playing around',
+  title: '好想工作室共同技術筆記',
+  description: '好想工作室共同技術筆記',
   plugins: [['@vuepress/plugin-search', {}]],
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
@@ -15,13 +15,13 @@ module.exports = defineUserConfig({
       ...makeNavRoute('one'),
       ...makeNavRoute('two'),
       ...makeNavRoute('demo'),
-      {
-        text: 'wrong path',
-        link: '/wrongPath',
-      },
     ],
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
-    sidebar: { ...makeSidebarRoute('one') },
+    sidebar: {
+      ...makeSidebarRoute('one'),
+      ...makeSidebarRoute('two'),
+      ...makeSidebarRoute('demo'),
+    },
   },
   bundlerConfig: {
     viteOptions: {
