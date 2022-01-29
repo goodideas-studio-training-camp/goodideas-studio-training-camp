@@ -1,46 +1,47 @@
 const fs = require('fs')
 const path = require('path')
 
-function getAbsolutePath(folder) {
-  return `${__dirname}/../docs/${folder}`
-}
-
 /**
- * Custom nav bar Router maker
- * @param {*} folderName 資料夾名稱
- * @param {*} text (Optional) 顯示在 nav 上面的文字, 如果沒有，會是資料夾名稱
- * @returns { text: string, children: string[] }
- */
-function makeNavRoute(folderName, text) {
-  const extension = '.md'
-  const basePath = path.join(getAbsolutePath(folderName))
-
-  const files = fs
-    .readdirSync(basePath)
-    .filter(fileName => {
-      // 跳過 readme.md
-      if (fileName.toLowerCase() === 'readme.md') return false
-
-      return (
-        fs.statSync(path.join(basePath, fileName)).isFile() &&
-        path.extname(fileName) === extension
-      )
-    })
-    .map(fileName => `/${folderName}/${fileName}`)
-  return [{ text: text ? text : folderName, children: [...files] }]
-}
-
-/**
- * Custom sidebar router maker
- * @param {*} folderName 資料夾名稱
- * @param {*} text (Optional) 顯示在 nav 上面的文字, 如果沒有，會是資料夾名稱
+ *
+ * @param {*} folder /docs 底下的 folder name
  * @returns
  */
-function makeSidebarRoute(folderName, text) {
-  return { [`/${folderName}/`]: makeNavRoute(folderName, text) }
+function getDirPath(folder) {
+  return `${process.cwd()}/docs/${folder}`
+}
+
+const docsRootName = ''
+
+/**
+ * make vuepress route config
+ * @param {[key: string]: string} map folder name - display name
+ * @param {string[]} exceptions filder name or file name
+ * @param {string} folderName If no spicial demand, do NOT changed, Thanks.
+ * @returns
+ */
+function makeNavRoute(map, exceptions = {}, folderName = docsRootName) {
+  const extension = '.md'
+  const basePath = getDirPath(folderName)
+
+  const children = fs.readdirSync(basePath).reduce((accumulator, subDir) => {
+    if (exceptions.includes(subDir)) return accumulator
+
+    const state = fs.statSync(path.join(basePath, subDir))
+
+    if (state.isFile() && path.extname(subDir) === extension) {
+      accumulator.push(`${folderName}/${subDir}`)
+    } else if (state.isDirectory()) {
+      accumulator.push({
+        text: map[subDir] ?? subDir,
+        children: makeNavRoute(map, exceptions, `${folderName}/${subDir}`),
+      })
+    }
+    return accumulator
+  }, [])
+
+  return children
 }
 
 module.exports = {
   makeNavRoute,
-  makeSidebarRoute,
 }
