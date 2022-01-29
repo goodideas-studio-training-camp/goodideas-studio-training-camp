@@ -1,32 +1,23 @@
 ---
+# ref: https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.html#home-page
 home: true
 heroImage: /good-ideas.png
-heroText: Test Title
-tagline: Test Subtitle
-actionText: Action Text
-actionLink: /##
+heroText: 好想工作室 共同技術筆記
+tagline: null
+# actionText: Action Text
+# actionLink: /##
+actions:
+  - text: Facebook
+    link: https://www.facebook.com/GoodideasStudio/
+    type: secondary
+  - text: 想知道？
+    link: '/'
+
 features:
-  - title: hakuna matata 1
-    details: 只有在了解了自己的無能以後，才能踏上成為高手的道路。——《灌籃高手》
-  - title: hakuna matata 2
-    details: 關於自己的生活，我和你都不是讀者，而是作者。 至少結局，還是能自己說了算的。  ——《銀魂》
-  - title: hakuna matata 3
-    details: 不會飛的豬，就只是平凡的豬。—《紅豬》
-footer: MIT Licensed | Copyright © 2018-present Evan You
+  - title: 位置
+    details: 東區北門路二段 16 號 L2A（台南文化創意產業園區 2 樓) Tainan, Taiwan 701
+
+footer: Copyright © 好想工作室
 ---
 
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
-首頁的其他內容會在這裡~
+<!-- say something -->
