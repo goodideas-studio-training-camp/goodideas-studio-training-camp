@@ -1,7 +1,8 @@
 const { path } = require('@vuepress/utils')
 const { makeNavRoute, makeSidebarRoute } = require('../../utils/routeMaker')
+const defineUserConfig = require('vuepress').defineUserConfig
 
-module.exports = {
+module.exports = defineUserConfig({
   base: '/Goodideas-studio-blog/',
   title: 'Hello VuePress',
   description: 'Just playing around',
@@ -21,4 +22,4 @@ module.exports = {
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
     sidebar: { ...makeSidebarRoute('one') },
   },
-}
+})
