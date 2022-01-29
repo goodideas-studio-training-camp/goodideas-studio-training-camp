@@ -6,6 +6,7 @@ description: YOYOYO
 ---
 
 <script setup>
+// 路徑可以使用 alias: @components/
 import Test from '@components/test.vue'
 </script>
 

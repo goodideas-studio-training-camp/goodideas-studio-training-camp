@@ -12,15 +12,94 @@
 
 say something...
 
-## 註冊你的作者簽名檔
+**先註冊你的作者簽名檔!!**
 
 在 `/docs/.vuepress/authers` 底下建立一個檔名和自己 git.username 一樣的 `.vue`，內容請自訂。
 
-## Post Article
+下面這行可以在 terminal 印出自己的 username:
+
+```
+git config --get user.name
+```
+
+---
+
+## Article
+
+### 寫文章
+
+1. 直接 clone
+1. 在 `docs` 目錄底下對應主題的資料夾內新增 `.md`
+1. 寫文章
+1. push, Done!
+
+### 增加新的文章分類
+
+1. 在 `docs` 底下新增資料夾、新增文章(`.md`)
+2. 在 `docs/.vuepress/config.js` 裡面的 folderNameMap 新增 key-value(資料夾名稱-要在 navbar/sidebar 顯示的 title)，不需要巢狀。
+
+```javascript
+// docs/.vuepress/config.js
+const folderNameMap = {
+  one: '第一個分類',
+  'demo-sub': 'demo 子目錄',
+}
+```
+
+如果沒有 text 會以 folderName 為顯示的 title 名稱
+
+### 例外的資料夾、檔案
+
+```javascript
+// default: 'index.md', '.vuepress'
+const exceptions = ['foo']
+```
+
+### 文章中引用 component
+
+**Vuepress 會把 `.md` 轉換成 SFC，所以遇到 `<>`，他會把內容轉換為 SFC 的 `<template>`/`<script>/<style>`。**
+
+所以在 `.md` 裡面直接寫 HTML 也是可以的。
+
+1. 在 `src/components` 底下新增你的 custom component
+2. 在 `.md` 裡面引用，並直接使用
+
+```
+<script setup>
+// 可以使用設定好的 alias: @components
+import CustomComponent from '@components/CustomComponent.vue'
+</script>
+
+<CustomComponent />
+```
+
+其他參考：https://g100my.github.io/vuepress/03-vueComponent.html
 
 ---
 
 ## Folder Structure
+
+```
+----
+  |- docs
+    |- .vuepress
+      |- config.js ( vuepress config )
+      |- theme ( 樣式相關 components / 繼承 Default theme 的 components )
+      |- style
+      |- public
+      |- authers ( 文章作者/貢獻者簽名檔)
+    |- ...( 文章分類目錄1 )
+    |- ...( 文章分類目錄2 )
+    |- ...( 文章分類目錄3 )
+    |- ...
+    |- ...
+    |- index.md ( 首頁 )
+  |- src (一般 SPA 開發環境)
+    |- components ( 底下的檔案目錄結構會被自動轉換為 routes，方便開發 demo )
+    |- router
+    |- App.vue
+    |- main.js
+```
 
 ---
 
@@ -35,7 +114,7 @@ say something...
 
 註：Vuepress 的 dependencies 已經包含 Vue, Vue router，為了讓 Vscode Intellisense 能偵測到，因此額外讓他出現在 package.json
 
-## Frequently Used
+<!-- ## Frequently Used Links -->
 
 ---
 
@@ -56,6 +135,8 @@ npm run dev     // vite （一般開發用的 local server）
 
 **Beware: 如果改動到 config，請重啟 server。**
 
+---
+
 ## Path Alias
 
 ```javascript
@@ -71,3 +152,6 @@ npm run dev     // vite （一般開發用的 local server）
 ## Others
 
 - Markdown Parse Engine: `markdown-it`
+- [繼承、修改 Default theme](https://v2.vuepress.vuejs.org/reference/default-theme/extending.html#extending)
+- [G100 - 把 Default theme 做點修改](https://g100my.github.io/vuepress/04-extendDefaultTheme.html)
+- [global component](https://v2.vuepress.vuejs.org/advanced/cookbook/usage-of-client-app-enhance.html#usage-of-client-app-enhance)
