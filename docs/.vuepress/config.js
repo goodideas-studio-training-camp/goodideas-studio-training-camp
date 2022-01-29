@@ -14,6 +14,7 @@ module.exports = defineUserConfig({
       { text: 'Home', link: '/' },
       ...makeNavRoute('one'),
       ...makeNavRoute('two'),
+      ...makeNavRoute('demo'),
       {
         text: 'wrong path',
         link: '/wrongPath',
@@ -21,5 +22,18 @@ module.exports = defineUserConfig({
     ],
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
     sidebar: { ...makeSidebarRoute('one') },
+  },
+  bundlerConfig: {
+    viteOptions: {
+      resolve: {
+        alias: [
+          {
+            find: '@components',
+            replacement: process.cwd() + '/src/components',
+          },
+          { find: '@docs', replacement: process.cwd() + '/docs' },
+        ],
+      },
+    },
   },
 })
