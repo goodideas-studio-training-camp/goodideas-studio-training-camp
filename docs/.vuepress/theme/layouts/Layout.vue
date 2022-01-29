@@ -2,7 +2,11 @@
   <Layout>
     <template #page-bottom>
       <div class="authers-container">
-        <component v-for="contributor in pageData.git.contributors" :key="contributor.name" :is="authers[contributor.name]" />
+        <component
+          v-for="contributor in pageData.git.contributors"
+          :key="contributor.name"
+          :is="authers[contributor.name]"
+        />
       </div>
     </template>
   </Layout>
@@ -20,10 +24,7 @@ export default {
   },
   setup() {
     const frontmatter = usePageFrontmatter()
-    console.log('frontmatter.value: ', frontmatter.value)
     const pageData = usePageData()
-    console.log('pageData.value: ', pageData.value)
-    console.log('pageData.value.git: ', pageData.value.git)
 
     return {
       authers,
