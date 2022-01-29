@@ -42,7 +42,7 @@ say something...
 ## Npm Script:
 
 ```
-npm run doc     // vuepress dev docs （寫文章用的 local server）
+npm run docs     // vuepress dev docs （寫文章用的 local server）
 npm run build   // vuepress build docs
 npm run dev     // vite （一般開發用的 local server）
 ```

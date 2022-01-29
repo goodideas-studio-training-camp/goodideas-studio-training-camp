@@ -4,7 +4,7 @@
   "description": "just test for now.",
   "main": "index.js",
   "scripts": {
-    "doc": "vuepress dev docs",
+    "docs": "vuepress dev docs",
     "build": "vuepress build docs",
     "dev": "vite"
   },
