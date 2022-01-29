@@ -56,6 +56,16 @@ npm run dev     // vite （一般開發用的 local server）
 
 **Beware: 如果改動到 config，請重啟 server。**
 
+## Path Alias
+
+```javascript
+{ find: '@components', replacement: process.cwd() + '/src/components', },
+{ find: '@docs', replacement: process.cwd() + '/docs' },
+
+// @component -> /src/components
+// @docs -> /docs
+```
+
 ---
 
 ## Others
