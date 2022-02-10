@@ -17,7 +17,9 @@
 
 ---
 
-##先註冊你的作者簽名檔!!
+## Registion
+
+### 先註冊你的作者簽名檔!!
 
 在 `/docs/.vuepress/authers` 底下建立一個檔名和自己 git.username 一樣的 `.vue`，內容請自訂。
 
