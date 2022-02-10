@@ -12,7 +12,9 @@
 
 say something...
 
-**先註冊你的作者簽名檔!!**
+---
+
+##先註冊你的作者簽名檔!!
 
 在 `/docs/.vuepress/authers` 底下建立一個檔名和自己 git.username 一樣的 `.vue`，內容請自訂。
 
@@ -29,9 +31,14 @@ git config --get user.name
 ### 寫文章
 
 1. 直接 clone
-1. 在 `docs` 目錄底下對應主題的資料夾內新增 `.md`
-1. 寫文章
-1. push, Done!
+2. 在 `docs` 目錄底下對應主題的資料夾內新增 `.md`，可以複製一份 `template.md` 到目標分類目錄底下
+
+```
+cp template.md docs/<path>
+```
+
+3. 寫文章
+4. push, Done!
 
 ### 增加新的文章分類
 
