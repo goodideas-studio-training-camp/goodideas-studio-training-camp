@@ -10,7 +10,10 @@
 
 # 一起來寫文章吧！
 
-say something...
+- 目前沒有任何制式的規範、規則，只要不要弄出奇怪事情，**可以任意修改/新增此部落格的任何樣式、功能**。
+- 也因為目前沒有任何制式的規範，所以請讓天馬行空的想像最大化，想做什麼實驗、練習就做吧。
+- 如果擔心弄壞整個網站可以以**發 [PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)** 的方式並且 asign 其他人來幫你 code review。
+- 有任何 想要新增的功能/發現的 bug，請發 Issue 並且**善用 Label 分類**，善用 github 原本就有的工具來加速事情的實現。且未來可能會用 `Issue` 來串接留言板的功能，所以請先善用分類避免真正的 Issue 和留言混在一起。
 
 ---
 
