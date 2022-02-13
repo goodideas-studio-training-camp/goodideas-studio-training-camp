@@ -1,13 +1,82 @@
 <template>
-  <div class="container">
-    <img src="./G100.jpg" style="width: 200px" alt="" />
-    <p>這是作者名片~?</p>
-    <p>因為可以從 build-in 的 git plugins 拿到 git commit 相關訊息， 可以省掉不少功夫來克制每個人的"名片" component 塞在每頁最下面進去。 也可以做個公版，用 .md 撰寫每個人的介紹， 只是可能要找出把 .md 變成 vue SFC 的 loader。</p>
-  </div>
+  <address class="g100">
+    <section class="g100_avatar">
+      <img src="./G100.jpg" alt="g100 自畫像" />
+    </section>
+    <h2 class="g100_name">G100 (Lo)</h2>
+    <section class="g100_description">
+      <p>
+        <span>blog: </span>
+        <a href="https://g100my.github.io/">https://g100my.github.io/</a>
+      </p>
+      <p>front-end developer</p>
+    </section>
+  </address>
 </template>
 <style lang="scss" scoped>
-.container {
-  background-color: lightgray;
-  color: black;
+$radius: 8px;
+$breakpoint: 520px;
+@mixin media_query() {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+.g100 {
+  background-color: rgba(233, 245, 255, 0.822);
+  border-radius: $radius;
+  padding: 12px;
+  color: darkblue;
+  font-style: normal;
+  text-transform: capitalize;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-column-gap: 12px;
+
+  &_avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 80px;
+      width: 100%;
+      border-radius: $radius;
+      box-shadow: 2px 2px 6px 2px gray;
+    }
+    @include media_query() {
+      grid-area: avatar;
+      img {
+        max-width: 160px;
+      }
+    }
+  }
+
+  &_name {
+    padding-left: (16/320 * 100%);
+    margin: 0;
+    align-self: flex-end;
+
+    @include media_query() {
+      padding-left: 0;
+      grid-area: name;
+    }
+  }
+
+  &_description {
+    grid-column: 1 / 3;
+    a {
+      text-transform: normal;
+    }
+    @include media_query() {
+      grid-area: description;
+    }
+  }
+
+  @include media_query() {
+    grid-template:
+      'avatar name'
+      'avatar description';
+  }
 }
 </style>
