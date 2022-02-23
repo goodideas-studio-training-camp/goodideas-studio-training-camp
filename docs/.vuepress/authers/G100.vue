@@ -14,6 +14,7 @@
   </address>
 </template>
 <style lang="scss" scoped>
+@use 'sass:math';
 $radius: 8px;
 $breakpoint: 520px;
 @mixin media_query() {
@@ -53,7 +54,7 @@ $breakpoint: 520px;
   }
 
   &_name {
-    padding-left: (16/320 * 100%);
+    padding-left: (math.div(16, 320) * 100%);
     margin: 0;
     align-self: flex-end;
 
