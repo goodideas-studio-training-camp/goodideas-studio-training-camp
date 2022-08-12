@@ -29,10 +29,6 @@ module.exports = defineUserConfig({
     viteOptions: {
       resolve: {
         alias: [
-          {
-            find: '@components',
-            replacement: path.dirname(__dirname) + '/src/components',
-          },
           { find: '@docs', replacement: path.dirname(__dirname) + '/docs' },
         ],
       },
