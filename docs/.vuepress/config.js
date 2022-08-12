@@ -31,9 +31,9 @@ module.exports = defineUserConfig({
         alias: [
           {
             find: '@components',
-            replacement: process.cwd() + '/src/components',
+            replacement: path.dirname(__dirname) + '/src/components',
           },
-          { find: '@docs', replacement: process.cwd() + '/docs' },
+          { find: '@docs', replacement: path.dirname(__dirname) + '/docs' },
         ],
       },
     },
