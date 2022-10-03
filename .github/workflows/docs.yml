@@ -23,21 +23,19 @@ jobs:
           # choose node.js version to use
           node-version: '17'
 
-      # cache node_modules
-      - name: Cache dependencies
+      - name: restore node_modules
+        id: cache
         uses: actions/cache@v2
-        id: yarn-cache
         with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       # install dependencies if the cache did not hit
       - name: Install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          echo '::Install dependencies::'
+          npm install
 
       # run build script
       - name: Build VuePress site
