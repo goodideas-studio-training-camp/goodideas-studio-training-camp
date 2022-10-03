@@ -1,4 +1,4 @@
-const { path } = require('@vuepress/utils')
+const path = require('path')
 const { makeNavRoute, makeSidebarRoute } = require('../../utils/routeMaker')
 const defineUserConfig = require('vuepress').defineUserConfig
 
@@ -32,6 +32,7 @@ module.exports = defineUserConfig({
           { find: '@docs', replacement: path.dirname(__dirname) + '/docs' },
         ],
       },
+      base: './',
     },
   },
 })
