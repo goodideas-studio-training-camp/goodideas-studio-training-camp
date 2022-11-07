@@ -4,7 +4,7 @@
 
 <br>
 
-<h1 align='center'>好想工作室 - 共同技術筆記</h1>
+<h1 align='center'>好想寫技術筆記 - 好想工作室</h1>
 
 <br>
 

@@ -2,7 +2,7 @@
 # ref: https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.html#home-page
 home: true
 heroImage: /good-ideas.png
-heroText: 好想工作室 共同技術筆記
+heroText: 好想寫技術筆記
 tagline: null
 # actionText: Action Text
 # actionLink: /##

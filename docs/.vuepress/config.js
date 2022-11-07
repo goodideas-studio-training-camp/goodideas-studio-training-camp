@@ -15,8 +15,8 @@ const navs = makeNavRoute(
 
 module.exports = defineUserConfig({
   base: '/Goodideas-studio-blog/',
-  title: '好想工作室共同技術筆記',
-  description: '好想工作室共同技術筆記',
+  title: '好想寫技術筆記',
+  description: '好想寫技術筆記',
   plugins: [['@vuepress/plugin-search', {}]],
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {

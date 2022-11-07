@@ -26,6 +26,11 @@
     float: left;
     margin-right: 20px;
   }
+  &::after {
+    content: '';
+    display: block;
+    clear: left;
+  }
   // column-count: 2;
   ol {
     margin-left: 140px;
