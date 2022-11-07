@@ -1,4 +1,4 @@
-# LINE 的 LIFF
+# 初次見面 LIFF of LINE
 
 這是什麼？
 
@@ -93,3 +93,5 @@ userId 就是用來發給 Messageing API 功能的主動通知，識別碼
 如果是不同的 `provider` 就會有不同的 `userID`。
 
 而每個 provider 可以擁有不同的 Messageing API 服務，可以做成不同的聊天機器人，它們各自有不同的 `Channel ID`，透過不同的 `Channel ID` 就算使用者是相同的 `userID` 也可以在不同的服務發給指定的使用者。
+
+文章同時發佈於 [《Chris 技術筆記》 - 初次見面 LIFF of LINE](https://dwatow.github.io/2022/11-07-first-liff/)
