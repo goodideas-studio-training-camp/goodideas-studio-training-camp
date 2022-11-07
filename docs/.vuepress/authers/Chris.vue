@@ -3,7 +3,7 @@
     <div class="avatar">
       <img src="./Chris.jpg" alt="" />
       <div><b>Chris</b></div>
-      <div><a href="https://dwatow.github.io/" target="_blank">github Blog</a></div>
+      <div><a href="https://dwatow.github.io/" target="_blank">《Chris 技術筆記》</a></div>
     </div>
     <ol>
       鐵人文章
