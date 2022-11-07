@@ -1,13 +1,34 @@
 <template>
   <div class="container">
-    <img src="./Chris.jpg" style="width: 200px" alt="" />
-    <p>這是另一個作者名片~?</p>
-    <p>因為可以從 build-in 的 git plugins 拿到 git commit 相關訊息， 可以省掉不少功夫來克制每個人的"名片" component 塞在每頁最下面進去。 也可以做個公版，用 .md 撰寫每個人的介紹， 只是可能要找出把 .md 變成 vue SFC 的 loader。</p>
+    <div class="avatar">
+      <img src="./Chris.jpg" alt="" />
+      <div><b>Chris</b></div>
+      <div><a href="https://dwatow.github.io/" target="_blank">github Blog</a></div>
+    </div>
+    <ol>
+      鐵人文章
+      <li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/1457">前端新手村</a></li>
+      <li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/1927">可不可以不要寫糙 code</a></li>
+      <li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/3641">完美 Camp 進化論</a></li>
+      <li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/4510">Vue.js 進階心法</a></li>
+    </ol>
   </div>
 </template>
+
+
 <style lang="scss" scoped>
 .container {
-  background-color: lightgray;
-  color: black;
+  .avatar {
+    img {
+      width: 120px;
+      display: block;
+    }
+    float: left;
+    margin-right: 20px;
+  }
+  // column-count: 2;
+  ol {
+    margin-left: 140px;
+  }
 }
 </style>
