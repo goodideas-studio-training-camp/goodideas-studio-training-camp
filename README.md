@@ -21,13 +21,14 @@
 
 ### 先註冊你的作者簽名檔!!
 
-在 `/docs/.vuepress/authers` 底下建立一個檔名和自己 git.username 一樣的 `.vue`，內容請自訂。
+1. 在 `/docs/.vuepress/authers` 底下建立一個檔名和自己 git.username 一樣的 `.vue`，內容請自訂。
 
 下面這行可以在 terminal 印出自己的 username:
 
 ```
 git config --get user.name
 ```
+2. 在 `index.js` import and export 上一步建立的 `username.vue`
 
 ---
 
