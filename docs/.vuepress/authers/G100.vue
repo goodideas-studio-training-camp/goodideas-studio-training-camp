@@ -3,20 +3,19 @@
     <section class="g100_avatar">
       <img src="./G100.jpg" alt="g100 自畫像" />
     </section>
-    <h2 class="g100_name">G100 (Lo)</h2>
+    <h2 class="g100_name">Lo <span class="g100_nickname">G100</span></h2>
     <section class="g100_description">
       <p>
         <span>blog: </span>
-        <a href="https://g100my.github.io/">https://g100my.github.io/</a>
+        <a href="https://g100my.github.io/">g100my.github.io</a>
       </p>
       <p>front-end developer</p>
     </section>
   </address>
 </template>
 <style lang="scss" scoped>
-@use 'sass:math';
-$radius: 8px;
-$breakpoint: 520px;
+$radius: 6px;
+$breakpoint: 425px;
 @mixin media_query() {
   @media (min-width: $breakpoint) {
     @content;
@@ -24,60 +23,58 @@ $breakpoint: 520px;
 }
 
 .g100 {
-  background-color: rgba(233, 245, 255, 0.822);
+  background-color: rgba(0, 10, 19, 0.5);
   border-radius: $radius;
-  padding: 12px;
-  color: darkblue;
+  color: rgb(228, 248, 253);
   font-style: normal;
   text-transform: capitalize;
   display: grid;
-  grid-template-columns: 80px 1fr;
   grid-column-gap: 12px;
+  grid-template:
+    'avatar name'
+    'description description'
+    / 120px 1fr;
+  p {
+    margin: 0;
+  }
+  @include media_query() {
+    grid-template:
+      'avatar name' 60px
+      'avatar description' 1fr
+      / 120px 1fr;
+  }
 
   &_avatar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    grid-area: avatar;
 
     img {
-      max-width: 80px;
+      height: 100%;
       width: 100%;
-      border-radius: $radius;
-      box-shadow: 2px 2px 6px 2px gray;
-    }
-    @include media_query() {
-      grid-area: avatar;
-      img {
-        max-width: 160px;
+      object-fit: cover;
+      border-top-left-radius: $radius;
+      max-width: 160px;
+      @include media_query() {
+        border-bottom-left-radius: $radius;
       }
     }
   }
 
   &_name {
-    padding-left: (math.div(16, 320) * 100%);
     margin: 0;
     align-self: flex-end;
-
-    @include media_query() {
-      padding-left: 0;
-      grid-area: name;
-    }
+    grid-area: name;
+  }
+  &_nickname {
+    font-size: 12px;
   }
 
   &_description {
-    grid-column: 1 / 3;
+    grid-area: description;
+    padding: 0 8px;
     a {
       text-transform: normal;
     }
-    @include media_query() {
-      grid-area: description;
-    }
-  }
-
-  @include media_query() {
-    grid-template:
-      'avatar name'
-      'avatar description';
   }
 }
 </style>
