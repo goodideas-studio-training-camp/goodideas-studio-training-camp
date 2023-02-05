@@ -1,4 +1,4 @@
-const { path } = require('@vuepress/utils')
+import path from 'path'
 
 module.exports = {
   name: 'test-extend-theme',

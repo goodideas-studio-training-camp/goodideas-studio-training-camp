@@ -1,47 +1,50 @@
 <template>
-  <div class="w-96 h-40 border-2 text-sm">
-    <div class="flex gap-2">
+  <div class="_container">
+    <div class="_tab">
       <button
-        v-for="tab in ['componentA', 'componentB', 'componentC']"
+        v-for="tab in ['ComponentA', 'ComponentB', 'ComponentC']"
         :key="tab"
+        class="_tab_button"
         @click="() => handleClick(tab)"
-        class="border border-black bg-gray-200 p-2"
       >
         {{ tab }}
       </button>
     </div>
-    <component :is="current" class="m-2" />
+    <component :is="current" class="_tab_panel" />
   </div>
 </template>
 
 <script setup>
-import { ref, h } from 'vue'
-import componentA from './A.vue'
-import componentB from './B.vue'
+import { shallowRef, h } from 'vue'
+import ComponentA from './ComponentA.vue'
+import ComponentB from './ComponentB.vue'
 
-const current = ref(componentA)
+const current = shallowRef(ComponentA)
 const handleClick = tab => {
   console.log(tab)
   switch (tab) {
-    case 'componentA':
-      current.value = componentA
+    case 'ComponentA':
+      current.value = ComponentA
       break
-    case 'componentB':
-      current.value = componentB
+    case 'ComponentB':
+      current.value = ComponentB
       break
-    case 'componentC':
+    case 'ComponentC':
       current.value = {
         render: () =>
           h(
-            componentA,
+            ComponentA,
             {
-              id: 'componentC',
-              class: 'p-2',
-              style: 'background-color: lightblue',
+              id: 'ComponentC',
               onClick: () => alert('clicked!'),
             },
             {
-              default: props => h('p', { class: 'text-sm' }, 'This is <p>, placed at default slot'),
+              default: props =>
+                h(
+                  'p',
+                  { style: { fontSize: 'small' } },
+                  'This is p tag, placed at default slot'
+                ),
             }
           ),
         props: {
@@ -57,3 +60,26 @@ const handleClick = tab => {
   }
 }
 </script>
+<style scoped>
+._container {
+  width: 350px;
+  /* height: 320px; */
+  border: 2px solid black;
+  font-size: small;
+}
+._container :deep(h1) {
+  font-size: small;
+}
+._tab {
+  display: flex;
+  gap: 8px;
+}
+._tab_button {
+  /* border border-black bg-gray-200 p-2 */
+  border: 2px border lightgray;
+  padding: 8px;
+}
+._tab_panel {
+  overflow: auto;
+}
+</style>

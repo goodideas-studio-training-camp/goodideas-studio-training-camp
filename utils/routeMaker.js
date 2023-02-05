@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 /**
  *
@@ -19,7 +19,7 @@ const docsRootName = ''
  * @param {string} folderName If no spicial demand, do NOT changed, Thanks.
  * @returns
  */
-function makeNavRoute(map, exceptions = {}, folderName = docsRootName) {
+export function makeNavRoute(map, exceptions = {}, folderName = docsRootName) {
   const extension = '.md'
   const basePath = getDirPath(folderName)
 
@@ -40,8 +40,4 @@ function makeNavRoute(map, exceptions = {}, folderName = docsRootName) {
   }, [])
 
   return children
-}
-
-module.exports = {
-  makeNavRoute,
 }

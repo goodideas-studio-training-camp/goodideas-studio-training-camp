@@ -1,6 +1,10 @@
-const { path } = require('@vuepress/utils')
-const { makeNavRoute, makeSidebarRoute } = require('../../utils/routeMaker')
-const defineUserConfig = require('vuepress').defineUserConfig
+import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress'
+import { makeNavRoute } from '../../utils/routeMaker'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { getDirname, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 const folderNameMap = {
   one: '第一個分類',
@@ -14,19 +18,31 @@ const navs = makeNavRoute(
   exceptions.concat(['index.md', '.vuepress'])
 )
 
-module.exports = defineUserConfig({
+export default defineUserConfig({
   base: '/Goodideas-studio-blog/',
   title: '好想寫技術筆記',
   description: '好想寫技術筆記',
-  plugins: [['@vuepress/plugin-search', {}]],
-  theme: path.resolve(__dirname, './theme'),
-  themeConfig: {
+  plugins: [
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, '../'),
+      componentsPatterns: ['**/*.vue'],
+      getComponentName: filename => {
+        const autoImportConponentName = path.trimExt(
+          filename.replace(/\/|\\/g, '-').replace('-components-', '-')
+        )
+        console.log(`Auto import: ${autoImportConponentName}`)
+        return autoImportConponentName
+      },
+    }),
+    searchPlugin(),
+  ],
+  theme: defaultTheme({
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
     navbar: [{ text: 'Home', link: '/' }, ...navs],
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
     sidebar: [...navs],
-  },
-  bundlerConfig: {
+  }),
+  bundler: viteBundler({
     viteOptions: {
       resolve: {
         alias: [
@@ -34,5 +50,5 @@ module.exports = defineUserConfig({
         ],
       },
     },
-  },
+  }),
 })

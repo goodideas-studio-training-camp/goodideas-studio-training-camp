@@ -163,7 +163,7 @@ vue 3 一樣。
 
 最後附上用 vue 3 `<script setup>` 寫的 demo
 
-<DynamicComponentDemo />
+<vue-DynamicComponentDemo />
 
 ```
 <template>
