@@ -2,10 +2,10 @@
   <div class="w-96 h-40 border-2 text-sm">
     <div class="flex gap-2">
       <button
-        v-for="tab in ['componentA', 'componentB', 'componentC']"
+        v-for="tab in ['ComponentA', 'ComponentB', 'ComponentC']"
         :key="tab"
-        @click="() => handleClick(tab)"
         class="border border-black bg-gray-200 p-2"
+        @click="() => handleClick(tab)"
       >
         {{ tab }}
       </button>
@@ -16,32 +16,37 @@
 
 <script setup>
 import { ref, h } from 'vue'
-import componentA from './A.vue'
-import componentB from './B.vue'
+import ComponentA from './ComponentA.vue'
+import ComponentB from './ComponentB.vue'
 
-const current = ref(componentA)
+const current = ref(ComponentA)
 const handleClick = tab => {
   console.log(tab)
   switch (tab) {
-    case 'componentA':
-      current.value = componentA
+    case 'ComponentA':
+      current.value = ComponentA
       break
-    case 'componentB':
-      current.value = componentB
+    case 'ComponentB':
+      current.value = ComponentB
       break
-    case 'componentC':
+    case 'ComponentC':
       current.value = {
         render: () =>
           h(
-            componentA,
+            ComponentA,
             {
-              id: 'componentC',
+              id: 'ComponentC',
               class: 'p-2',
               style: 'background-color: lightblue',
               onClick: () => alert('clicked!'),
             },
             {
-              default: props => h('p', { class: 'text-sm' }, 'This is <p>, placed at default slot'),
+              default: props =>
+                h(
+                  'p',
+                  { class: 'text-sm' },
+                  'This is p tag, placed at default slot'
+                ),
             }
           ),
         props: {
