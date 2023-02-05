@@ -1,6 +1,7 @@
 import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress'
 import { makeNavRoute } from '../../utils/routeMaker'
 import path from 'path'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 
 const folderNameMap = {
   one: '第一個分類',
@@ -18,7 +19,11 @@ export default defineUserConfig({
   base: '/Goodideas-studio-blog/',
   title: '好想寫技術筆記',
   description: '好想寫技術筆記',
-  plugins: [],
+  plugins: [
+    registerComponentsPlugin({
+      componentsPatterns: ['docs/**/components/**/*.vue'],
+    }),
+  ],
   theme: defaultTheme({
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
     navbar: [{ text: 'Home', link: '/' }, ...navs],
