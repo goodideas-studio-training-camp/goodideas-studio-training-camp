@@ -182,3 +182,12 @@ html.dark .DocSearch {
 html {
   font-size: 16px;
 }
+
+// custom
+
+header.navbar .title,
+.sidebar-item.sidebar-heading,
+p.sidebar-item,
+.navbar-dropdown-subtitle {
+  text-transform: capitalize;
+}
