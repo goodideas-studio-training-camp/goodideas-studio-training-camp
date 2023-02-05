@@ -29,7 +29,7 @@ function makeNavRoute(map, exceptions = {}, folderName = docsRootName) {
     const state = fs.statSync(path.join(basePath, subDir))
 
     if (state.isFile() && path.extname(subDir) === extension) {
-      accumulator.push(`${folderName}/${subDir}`)
+      accumulator.unshift(`${folderName}/${subDir}`)
     } else if (state.isDirectory()) {
       accumulator.push({
         text: map[subDir] ?? subDir,

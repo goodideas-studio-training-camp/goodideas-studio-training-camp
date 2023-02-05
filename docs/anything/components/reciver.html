@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .counter {
+        font-size: xx-large;
+      }
+      iframe {
+        border: deepskyblue 2px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="counter" class="counter">0</p>
+      <iframe src="http://localhost:5500/sender.html" frameborder="0"></iframe>
+    </div>
+
+    <script>
+      var counter = document.getElementById('counter')
+      window.addEventListener('message', event => {
+        console.log(event)
+        if (event.origin !== 'http://localhost:5500') return
+        counter.textContent = event.data
+      })
+    </script>
+  </body>
+</html>

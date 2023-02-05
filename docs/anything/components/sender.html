@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .counter {
+        font-size: xx-large;
+      }
+      button {
+        font-size: xx-large;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="iframe-button" type="button">iframe page</button>
+
+    <script>
+      var btn = document.getElementById('iframe-button')
+      btn.addEventListener('click', () => {
+        if (!btn.count) btn.count = 0
+        btn.count += 1
+        window.parent.postMessage(btn.count, 'http://localhost:5500')
+        console.log('clicked!')
+      })
+    </script>
+  </body>
+</html>

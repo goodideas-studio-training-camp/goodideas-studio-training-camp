@@ -4,9 +4,8 @@
   "description": "just test for now.",
   "main": "index.js",
   "scripts": {
-    "docs": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "dev": "vite"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
