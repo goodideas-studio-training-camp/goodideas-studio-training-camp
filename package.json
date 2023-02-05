@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/G100my/goodideas-studio-blog#readme",
   "devDependencies": {
+    "@vuepress/client": "^2.0.0-beta.60",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-vue": "^9.9.0",
