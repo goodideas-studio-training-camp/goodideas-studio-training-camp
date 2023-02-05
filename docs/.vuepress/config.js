@@ -2,6 +2,7 @@ import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress'
 import { makeNavRoute } from '../../utils/routeMaker'
 import path from 'path'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { searchPlugin } from '@vuepress/plugin-search'
 
 const folderNameMap = {
   one: '第一個分類',
@@ -23,6 +24,7 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsPatterns: ['docs/**/components/**/*.vue'],
     }),
+    searchPlugin(),
   ],
   theme: defaultTheme({
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
