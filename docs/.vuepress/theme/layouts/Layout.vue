@@ -13,9 +13,8 @@
 </template>
 
 <script>
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter, usePageData } from 'vuepress'
 import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
-import { usePageData } from '@vuepress/client'
 import * as authers from '../../authers/index.js'
 
 export default {
