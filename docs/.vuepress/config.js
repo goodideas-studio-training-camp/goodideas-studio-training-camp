@@ -1,8 +1,10 @@
 import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress'
 import { makeNavRoute } from '../../utils/routeMaker'
-import path from 'path'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { getDirname, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 const folderNameMap = {
   one: '第一個分類',
@@ -22,7 +24,15 @@ export default defineUserConfig({
   description: '好想寫技術筆記',
   plugins: [
     registerComponentsPlugin({
-      componentsPatterns: ['docs/**/components/**/*.vue'],
+      componentsDir: path.resolve(__dirname, '../'),
+      componentsPatterns: ['**/*.vue'],
+      getComponentName: filename => {
+        const autoImportConponentName = path.trimExt(
+          filename.replace(/\/|\\/g, '-').replace('-components-', '-')
+        )
+        console.log(`Auto import: ${autoImportConponentName}`)
+        return autoImportConponentName
+      },
     }),
     searchPlugin(),
   ],
