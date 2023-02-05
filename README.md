@@ -28,6 +28,7 @@
 ```
 git config --get user.name
 ```
+
 2. 在 `index.js` import and export 上一步建立的 `username.vue`
 
 ---
@@ -134,9 +135,8 @@ import CustomComponent from '@components/CustomComponent.vue'
 ## Npm Script:
 
 ```
-npm run docs     // vuepress dev docs （寫文章用的 local server）
-npm run build   // vuepress build docs
-npm run dev     // vite （一般開發用的 local server）
+npm run dev     // vuepress dev （local server）
+npm run build   // vuepress build
 ```
 
 開發環境有

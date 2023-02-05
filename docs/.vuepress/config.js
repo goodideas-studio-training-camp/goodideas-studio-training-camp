@@ -6,7 +6,8 @@ const folderNameMap = {
   one: '第一個分類',
   'demo-sub': 'demo 子目錄',
 }
-const exceptions = []
+// default 會把 '/docs' 底下所有路徑做成 route
+const exceptions = ['components', 'images']
 
 const navs = makeNavRoute(
   folderNameMap,
