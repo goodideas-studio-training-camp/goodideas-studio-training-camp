@@ -62,6 +62,8 @@ const folderNameMap = {
 
 如果沒有 text 會以 folderName 為顯示的 title 名稱
 
+分類內的文章排序順序是採 **由上到下、新到舊**
+
 ### 例外的資料夾、檔案
 
 ```javascript
