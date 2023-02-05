@@ -71,23 +71,20 @@ const exceptions = ['foo']
 
 ### 文章中引用 component
 
-**Vuepress 會把 `.md` 轉換成 SFC，所以遇到 `<>`，他會把內容轉換為 SFC 的 `<template>`/`<script>/<style>`。**
-
-所以在 `.md` 裡面直接寫 HTML 也是可以的。
-
-1. 在 `src/components` 底下新增你的 custom component
-2. 在 `.md` 裡面引用，並直接使用
+1. 在 `<文章分類>/components` 底下新增你的 custom component
+2. 在 `.md` 裡面引用
+3. 檔案名稱會是 `文章分類名稱-檔案名稱`，例如在 `anything/components` 底下的 `Test.vue`
+   import 時請這樣使用
 
 ```
-<script setup>
-// 可以使用設定好的 alias: @components
-import CustomComponent from '@components/CustomComponent.vue'
-</script>
+// test.md
 
-<CustomComponent />
+這是文章
+<anything-Test />
+這是文章
 ```
 
-其他參考：https://g100my.github.io/vuepress/03-vueComponent.html
+詳情請見 `.vuepress/config`>`registerComponentsPlugin`
 
 ---
 
@@ -108,11 +105,6 @@ import CustomComponent from '@components/CustomComponent.vue'
     |- ...
     |- ...
     |- index.md ( 首頁 )
-  |- src (一般 SPA 開發環境)
-    |- components ( 底下的檔案目錄結構會被自動轉換為 routes，方便開發 demo )
-    |- router
-    |- App.vue
-    |- main.js
 ```
 
 ---
@@ -121,14 +113,8 @@ import CustomComponent from '@components/CustomComponent.vue'
 
 - [Vuepress@next](https://v2.vuepress.vuejs.org/)
 - [Vite](https://vitejs.dev/)
-- [Vue 3](https://v3.vuejs.org/api/)
-- [Vue Router](https://next.router.vuejs.org/api/)
-- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) On-demand components auto importing for Vue.
-- [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) File system based route generator for Vite
 
 註：Vuepress 的 dependencies 已經包含 Vue, Vue router，為了讓 Vscode Intellisense 能偵測到，因此額外讓他出現在 package.json
-
-<!-- ## Frequently Used Links -->
 
 ---
 
@@ -139,13 +125,6 @@ npm run dev     // vuepress dev （local server）
 npm run build   // vuepress build
 ```
 
-開發環境有
-
-- 用 vuepress 起的 local server，會以 Blog 呈現
-- 用 vite 起的 local server，以 SPA 呈現，方便開發 demo/blog component 的環境
-  - `vite-plugin-pages`: 自動從 'src/components' 載入 components 作為 route，
-  - `unplugin-vue-components`: 自動 import 所需要的 component
-
 **Beware: 如果改動到 config，請重啟 server。**
 
 ---
@@ -153,10 +132,8 @@ npm run build   // vuepress build
 ## Path Alias
 
 ```javascript
-{ find: '@components', replacement: process.cwd() + '/src/components', },
 { find: '@docs', replacement: process.cwd() + '/docs' },
 
-// @component -> /src/components
 // @docs -> /docs
 ```
 
