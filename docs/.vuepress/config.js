@@ -19,7 +19,7 @@ const navs = makeNavRoute(
 )
 
 export default defineUserConfig({
-  base: '/Goodideas-studio-blog/',
+  base: '/',
   title: '好想寫技術筆記',
   description: '好想寫技術筆記',
   plugins: [
