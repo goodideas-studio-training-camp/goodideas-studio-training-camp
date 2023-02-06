@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <ParentLayout>
     <template #page-bottom>
       <div class="authers-container">
         <component
@@ -9,17 +9,17 @@
         />
       </div>
     </template>
-  </Layout>
+  </ParentLayout>
 </template>
 
 <script>
-import { usePageFrontmatter, usePageData } from 'vuepress'
-import Layout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
-import * as authers from '../../authers/index.js'
+import { usePageFrontmatter, usePageData } from '@vuepress/client'
+import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
+import * as authers from '../authers/index'
 
 export default {
   components: {
-    Layout,
+    ParentLayout,
   },
   setup() {
     const frontmatter = usePageFrontmatter()
