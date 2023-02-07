@@ -1,6 +1,5 @@
 <template>
   <address class="g100">
-    <pre>this is test code</pre>
     <section class="g100_avatar">
       <img src="./G100.jpg" alt="g100 自畫像" />
     </section>
