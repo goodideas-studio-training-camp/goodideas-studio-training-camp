@@ -1,6 +1,7 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
+      <pre>{{ pageData }}</pre>
       <div class="authers-container">
         <component
           v-for="contributor in pageData.git.contributors"
