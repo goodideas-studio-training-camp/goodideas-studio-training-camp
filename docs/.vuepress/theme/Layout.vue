@@ -24,11 +24,18 @@ export default {
   setup() {
     const pageData = usePageData();
 
+    
+    const matter_constributors = []
+    if ('contributors' in pageData.value.frontmatter) {
+      matter_constributors.concat(pageData.value.frontmatter.constributors)
+    }
+
+    
     return {
       authers,
       contributors: [...new Set([
       ...pageData.value.git.contributors.map(item => item.name),
-      ...pageData.value.frontmatter.contributors
+      ...matter_constributors
     ])],
     }
   },
