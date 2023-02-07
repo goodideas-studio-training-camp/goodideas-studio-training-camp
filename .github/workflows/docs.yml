@@ -10,8 +10,6 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - name: git checkout min
-        run: git checkout main
       - name: git pull
         run: git pull
       # run build script
