@@ -1,3 +1,8 @@
+---
+contributors: 
+- 'chris'
+---
+
 # 初次見面 LIFF of LINE
 
 這是什麼？

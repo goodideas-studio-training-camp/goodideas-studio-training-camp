@@ -1,3 +1,8 @@
+---
+contributors: 
+- 'chris'
+---
+
 # Github Page 設定自定義的網域
 
 [原文說明](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)

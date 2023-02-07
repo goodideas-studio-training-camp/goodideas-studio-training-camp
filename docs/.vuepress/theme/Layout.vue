@@ -1,12 +1,11 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
-
       <div class="authers-container">
         <component
-          v-for="contributor in pageData.git.contributors"
-          :key="contributor.name"
-          :is="authers[contributor.name]"
+          v-for="(contributor) in contributors"
+          :key="contributor"
+          :is="authers[contributor]"
         />
       </div>
     </template>
@@ -23,18 +22,14 @@ export default {
     ParentLayout,
   },
   setup() {
-    //     const pageData = usePageData()
-    // const contributors = pageData.git.contributors.filter(contributor => authers.includes(contributor.name))
-    // return {
-    //   contributors,
-    //   authers: JSON.parse(JSON.stringify(authers))
-    // }
-
-    const pageData = usePageData()
+    const pageData = usePageData();
 
     return {
       authers,
-      pageData,
+      contributors: [...new Set([
+      ...pageData.value.git.contributors.map(item => item.name),
+      ...pageData.value.frontmatter.contributors
+    ])],
     }
   },
 }
