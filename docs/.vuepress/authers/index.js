@@ -5,4 +5,4 @@ import mangoSu from './mangoSu.vue'
 import Cathy from './Cathy/Cathy.vue'
 import chang from './chang.vue'
 import JCChiou from './JCChiou/JCChiou.vue'
-export { G100, chris, titangene, mangoSu, Cathy, chang, JCChiou}
+export default { G100, chris, titangene, mangoSu, Cathy, chang, JCChiou}

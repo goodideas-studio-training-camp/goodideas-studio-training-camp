@@ -10,6 +10,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+      - name: git checkout min
+        run: git checkout main
+      - name: git pull
+        run: git pull
+      # run build script
       - uses: actions/checkout@v3
       - name: Setup Node.js
         uses: actions/setup-node@v3
