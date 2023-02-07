@@ -3,6 +3,7 @@ import { makeNavRoute } from '../../utils/routeMaker'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { getDirname, path } from '@vuepress/utils'
+import { gitPlugin } from '@vuepress/plugin-git'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -35,6 +36,9 @@ export default defineUserConfig({
       },
     }),
     searchPlugin(),
+    gitPlugin({
+      // options
+    }),
   ],
   theme: defaultTheme({
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar

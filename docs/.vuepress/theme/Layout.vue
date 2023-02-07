@@ -1,7 +1,6 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
-      <pre>{{ pageData }}</pre>
       <div class="authers-container">
         <component
           v-for="contributor in pageData.git.contributors"
@@ -23,7 +22,6 @@ export default {
     ParentLayout,
   },
   setup() {
-    const frontmatter = usePageFrontmatter()
     const pageData = usePageData()
 
     return {
