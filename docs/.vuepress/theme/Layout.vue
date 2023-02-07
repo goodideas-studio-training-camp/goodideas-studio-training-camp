@@ -2,10 +2,11 @@
   <ParentLayout>
     <template #page-bottom>
       <div class="authers-container">
+        <pre>{{ pageData.git.contributors }}</pre>
         <component
-          v-for="(contributor) in contributors"
-          :key="contributor"
-          :is="authers[contributor]"
+          v-for="contributor in pageData.git.contributors"
+          :key="contributor.name"
+          :is="authers[contributor.name]"
         />
       </div>
     </template>
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import { usePageData } from '@vuepress/client'
+import { usePageFrontmatter, usePageData } from '@vuepress/client'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 import authers from '../authers'
 
@@ -22,21 +23,11 @@ export default {
     ParentLayout,
   },
   setup() {
-    const pageData = usePageData();
+    const pageData = usePageData()
 
-    
-    const matter_constributors = []
-    if ('contributors' in pageData.value.frontmatter) {
-      matter_constributors.concat(pageData.value.frontmatter.constributors)
-    }
-
-    
     return {
       authers,
-      contributors: [...new Set([
-      ...pageData.value.git.contributors.map(item => item.name),
-      ...matter_constributors
-    ])],
+      pageData,
     }
   },
 }
