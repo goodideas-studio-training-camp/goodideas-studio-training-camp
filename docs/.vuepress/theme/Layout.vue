@@ -1,6 +1,7 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
+      <pre>{{  pageData }}</pre>
       <div class="authers-container">
         <component
           v-for="contributor in pageData.git.contributors"
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import { usePageFrontmatter, usePageData } from '@vuepress/client'
+import { usePageData } from '@vuepress/client'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 import * as authers from '../authers/index'
 

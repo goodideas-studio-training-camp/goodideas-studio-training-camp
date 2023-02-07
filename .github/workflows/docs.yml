@@ -5,44 +5,36 @@ on:
   push:
     branches: [main]
   # trigger deployment manually
-  workflow_dispatch:
-
+  # workflow_dispatch:
 jobs:
   docs:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           # choose node.js version to use
           node-version: 18
-
       - name: restore node_modules
         id: cache
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
       # install dependencies if the cache did not hit
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           echo '::Install dependencies::'
           npm install
-
       # run build script
       - name: Build VuePress site
-        run: yarn build
-
+        run: npm run build
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
-
         with:
           # deploy to gh-pages branch
           target_branch: gh-pages

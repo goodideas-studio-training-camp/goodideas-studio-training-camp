@@ -36,9 +36,7 @@ export default defineUserConfig({
       },
     }),
     searchPlugin(),
-    gitPlugin({
-      // options
-    }),
+    gitPlugin(),
   ],
   theme: defaultTheme({
     // https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
