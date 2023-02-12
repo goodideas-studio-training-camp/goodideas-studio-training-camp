@@ -190,7 +190,7 @@ export function useSnackbar() {
 ```
 
 :::tip
-L151, L164 是 function 還是已經建立好的 Vnode 其實不太要緊，這編的使用情境，元件是 Global 的，使用頻率會很高。
+L151, L164 是 function 還是已經建立好的 Vnode 其實不太要緊，這邊的使用情境，元件是 Global 的，使用頻率會很高。
 
 不是 function 的話會有這句警告
 
