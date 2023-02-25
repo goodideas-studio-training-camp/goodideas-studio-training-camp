@@ -20,7 +20,6 @@ date: 2023-02-25
 import { ref, watch } from 'vue'
 import { useAccountStore } from '@/stores'
 
-// 只在這個 scope 裡面使用，用 let 宣告即可。用 ref 也沒錯，可以永遠確保 reactive，但沒有必要
 const isLoaded = ref(false)
 // 這裡的 enum，可以不必要，而且使用範圍都只在這份檔案裡，不必是 string enum。
 enum GoogleSigninStatus {
@@ -29,7 +28,6 @@ enum GoogleSigninStatus {
   failed = 'failed',
 }
 
-// 只在這個 scope 裡面使用，用 let 宣告即可
 const googleSigninResult = ref<keyof typeof GoogleSigninStatus>('init')
 
 function loadScript() {
@@ -141,8 +139,8 @@ const emit = defineEmits<{ (e: 'success'): void; (e: 'failed'): void }>()
 
 ```typescript
 import { watch } from 'vue'
-// 單純使用 let 就可以了
-let isLoaded = false
+
+let isLoaded = ref(false)
 // 定義一個專屬的 script.id
 const googleSDKid = 'google-account-script'
 // params 型別可以去從 @types/google.accounts 找出來用
@@ -153,7 +151,7 @@ function loadScript(SigninCallback: (res: google.accounts.id.CredentialResponse)
   script.async = true
   script.defer = true
   script.onload = () => {
-    isLoaded = true
+    isLoaded.value = true
     google.accounts.id.initialize({
       client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
       callback: res => SigninCallback(res),
@@ -188,10 +186,9 @@ function create(buttonDiv: HTMLElement, SigninCallback?: Parameters<typeof loadS
   }
 
   // 如果 script 已經載入了就直接 render button，如果沒有才用 watch，並且避免時間差所以用 immediate 屬性
-  if (!isLoaded) {
+  if (!isLoaded.value) {
     const unwatch = watch(
-      // watch 非 reactive 的東西，包裝成 function 就可以
-      () => isLoaded,
+      isLoaded,
       v => {
         if (!v) return
         renderGoogleButton(buttonDiv)
