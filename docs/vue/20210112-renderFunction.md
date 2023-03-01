@@ -9,7 +9,7 @@ date: 2021-01-12
 
 一般在 SFC 裡大概長這樣：
 
-```
+```typescript
 <templete>
   <div>
     <div class="flex gap-2">
@@ -80,7 +80,7 @@ current 在 vue 2 是放 component key name，
 
 所以 vue 2 裡面可以這樣寫
 
-```
+```typescript
 <template>
   <div>
     <div>
@@ -165,7 +165,7 @@ vue 3 一樣。
 
 <vue-DynamicComponentDemo />
 
-```
+```typescript
 <template>
   <div class="w-96 h-40 border-2">
     <div class="flex gap-2">
