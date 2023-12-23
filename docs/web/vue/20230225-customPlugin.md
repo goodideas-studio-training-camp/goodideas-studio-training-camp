@@ -3,6 +3,8 @@ title: 包裝 Custom plugin 範例
 lang: zh-TW
 description: Vue Custom Plugin 範例
 date: 2023-02-25
+contributors: 
+- "G100"
 ---
 
 # Vue Custom Plugin 範例

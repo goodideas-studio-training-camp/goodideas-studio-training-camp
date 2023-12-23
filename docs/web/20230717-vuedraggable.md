@@ -3,6 +3,8 @@
 title: 使用 vuedraggable 做看板元件
 lang: zh-TW
 date: 2023-07-17
+contributors: 
+- "Chiahsuan"
 ---
 
 # 使用 vuedraggable 做看板元件

@@ -4,6 +4,8 @@ title: 在不同窗口之間傳遞資訊 window.postMessage()
 lang: zh-TW
 description: window.postMessage 可用於網頁與 APP(ios/android)、iframe 之間的溝通。
 date: 2021-10-17
+contributors: 
+- "G100"
 ---
 
 # 在不同窗口之間傳遞資訊 window.postMessage()
