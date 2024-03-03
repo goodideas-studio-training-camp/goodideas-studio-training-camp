@@ -1,8 +1,5 @@
 ---
 title: Di with Coroutine Dispatcher
-lang: zh-TW
-description:
-date: Nov, 07, 2022
 ---
 # Di with Coroutine Dispatcher
 
