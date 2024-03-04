@@ -1,7 +1,7 @@
 ---
 author: G100
 contributors:
-  - Chris
+  - chris
 title: 部落格徵才（？）
 description: web camp 園長 - Chris 靈光一閃決定採用 Vuepress 弄個好想工作室共同技術部落格。
 pubDatetime: 2022-02-17 16:45:21

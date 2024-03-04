@@ -6,8 +6,8 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
-import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
+import AuthorContributorBlock from '@components/AuthorContributorBlock.vue'
 
 export interface Props {
   post: CollectionEntry<SiteCollectionKeys>;
@@ -24,6 +24,7 @@ const {
   pubDatetime,
   modDatetime,
   tags,
+  contributors
 } = post.data;
 
 const { Content } = await post.render();
@@ -96,7 +97,9 @@ const layoutProps = {
         <span>Back to Top</span>
       </button>
 
-      <ShareLinks />
+      <AuthorContributorBlock client:idle author_name={author} contributors={contributors} />
+
+      <!-- <ShareLinks /> -->
     </div>
   </main>
   <Footer />
