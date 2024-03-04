@@ -93,7 +93,7 @@ jobs:
 所以想要精緻的控制，可能要拆成多個 `job`，由一個 `workflow` 來統整。
 
 先上做好的樣子
-<img src="./images/20230215-github_action-01.png" />
+![](./images/20230215-github_action-01.png)
 
 main.yml 裡面包涵了 5 個 job，其中 3 個會是並行的，這樣如果各個專案都要重新 build，就不會排隊，減少整體的部屬速度。
 
