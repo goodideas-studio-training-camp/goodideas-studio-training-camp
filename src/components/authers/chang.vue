@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import avatar from "./chang.jpg";
+</script>
 <template>
   <address class="chang">
     <section class="chang_avatar">
-      <img src="./chang.jpg" alt="chang avatar">
+      <img :src="avatar.src" alt="chang avatar" />
     </section>
     <section class="chang_info">
       <h2 class="chang_name">Kenny</h2>
@@ -12,7 +15,7 @@
   </address>
 </template>
 <style lang="scss" scoped>
-@use 'sass:math';
+@use "sass:math";
 $radius: 8px;
 $breakpoint: 520px;
 @mixin media_query() {
@@ -32,8 +35,8 @@ $breakpoint: 520px;
   font-style: normal;
   text-transform: capitalize;
   @include media_query() {
-      flex-direction: row;
-    }
+    flex-direction: row;
+  }
 
   &_avatar {
     img {
@@ -75,8 +78,8 @@ $breakpoint: 520px;
 
   @include media_query() {
     grid-template:
-      'avatar name'
-      'avatar description';
+      "avatar name"
+      "avatar description";
   }
 }
 </style>

@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import avatar from "./Chris.jpg";
+</script>
 <template>
   <div class="container">
     <div class="avatar">
-      <img src="./Chris.jpg" alt="" />
+      <img :src="avatar.src" alt="" />
       <div><b>Chris</b></div>
       <div><a href="https://dwatow.github.io/" target="_blank">《Chris 技術筆記》</a></div>
     </div>

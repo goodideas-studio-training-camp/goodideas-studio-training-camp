@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import avatar from "./JCChiou.jpg";
+</script>
 <template>
   <address class="jc">
     <section class="jc_avatar">
-      <img src="./JCChiou.jpg" alt="Rex chiu avatar">
+      <img :src="avatar.src" alt="Rex chiu avatar">
     </section>
     <section class="jc_info">
       <h2 class="jc_name">Rex chiu</h2>

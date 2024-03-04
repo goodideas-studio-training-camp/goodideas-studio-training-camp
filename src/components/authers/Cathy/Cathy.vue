@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import avatar from "./Cathy.jpeg";
+</script>
 <template>
   <address class="cathy">
     <section class="cathy_avatar">
-      <img src="./Cathy.jpeg" alt="cathy icon">
+      <img :src="avatar.src" alt="cathy icon">
     </section>
     <section class="cathy_info">
       <h2 class="cathy_name">Cathy Shen</h2>

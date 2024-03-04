@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import avatar from "./G100.jpg";
+</script>
 <template>
   <address class="g100">
     <section class="g100_avatar">
-      <img src="./G100.jpg" alt="g100 自畫像" />
+      <img :src="avatar.src" alt="g100 自畫像" />
     </section>
     <h2 class="g100_name">Lo <span class="g100_nickname">G100</span></h2>
     <section class="g100_description">
@@ -31,16 +34,16 @@ $breakpoint: 425px;
   display: grid;
   grid-column-gap: 12px;
   grid-template:
-    'avatar name'
-    'description description'
+    "avatar name"
+    "description description"
     / 120px 1fr;
   p {
     margin: 0;
   }
   @include media_query() {
     grid-template:
-      'avatar name' 60px
-      'avatar description' 1fr
+      "avatar name" 60px
+      "avatar description" 1fr
       / 120px 1fr;
   }
 
