@@ -1,19 +1,19 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
+  website: "https://blog.goodideas-studio.com/",
+  author: "Goodideas Studio",
+  desc: "讓經驗可以能有更好的傳承與紀錄，辛苦研究過的文章比較不會因為學員的世代輪替而被遺忘然後沒人逛",
+  title: "好想寫技術筆記",
+  ogImage: "good-ideas.png",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
 export const LOCALE = {
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  langTag: ["en-EN"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  lang: "zh", // html lang code. Set this empty and default will be "en"
+  langTag: ["zh-TW"], // BCP 47 Language Tags. Set this empty [] to use the environment default
 } as const;
 
 export const LOGO_IMAGE = {
@@ -26,13 +26,13 @@ export const LOGO_IMAGE = {
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/goodideas-studio-training-camp/goodideas-studio-training-camp",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
   {
     name: "Facebook",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://www.facebook.com/GoodideasStudio/?locale=zh_TW",
     linkTitle: `${SITE.title} on Facebook`,
     active: true,
   },
@@ -40,13 +40,13 @@ export const SOCIALS: SocialObjects = [
     name: "Instagram",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Instagram`,
-    active: true,
+    active: false,
   },
   {
     name: "LinkedIn",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on LinkedIn`,
-    active: true,
+    active: false,
   },
   {
     name: "Mail",
@@ -143,5 +143,11 @@ export const SOCIALS: SocialObjects = [
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Mastodon`,
     active: false,
+  },
+  {
+    name: "Website",
+    href: "https://goodideas-studio.com/",
+    linkTitle: `好想工作室官方網站`,
+    active: true,
   },
 ];
