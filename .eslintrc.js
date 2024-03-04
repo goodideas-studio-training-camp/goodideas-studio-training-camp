@@ -1,22 +1,23 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
     node: true,
+    es2022: true,
+    browser: true,
   },
-  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
+  extends: ["eslint:recommended", "plugin:astro/recommended"],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: ['vue'],
-  rules: {
-    'no-console': process.env.NODE_MODE === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_MODE === 'production' ? 'warn' : 'off',
-    'no-unused-vars': 'warn',
-    'no-undef': 'warn',
-    'vue/no-unused-components': 'warn',
-    'vue/require-v-for-key': 'warn',
-    'vue/valid-template-root': 'warn',
-  },
-}
+  overrides: [
+    {
+      files: ["*.astro"],
+      parser: "astro-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
+      },
+      rules: {},
+    },
+  ],
+};
