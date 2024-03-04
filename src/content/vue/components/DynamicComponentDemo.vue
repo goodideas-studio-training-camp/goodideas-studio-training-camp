@@ -21,7 +21,6 @@ import ComponentB from './ComponentB.vue'
 
 const current = shallowRef(ComponentA)
 const handleClick = tab => {
-  console.log(tab)
   switch (tab) {
     case 'ComponentA':
       current.value = ComponentA
