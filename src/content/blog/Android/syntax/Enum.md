@@ -1,12 +1,14 @@
 ---
+author: chang
 title: Enum
-lang: zh-TW
-description:
-date: Nov, 07, 2022
+description: ""
+pubDatetime: 2022-11-07 11:46:24
 ---
+
 # Enum
 
 enum 在 Kotlin 裡面經常被用來封裝有限狀態，官網給的範例是
+
 ```kotlin=
 enum class Direction {
     NORTH, SOUTH, WEST, EAST
@@ -14,6 +16,7 @@ enum class Direction {
 ```
 
 在程式中我們會更常這樣使用
+
 ```kotlin=
 fun main() {
     val ii = CoffeeType.fromInt(0)
@@ -38,5 +41,6 @@ enum class CoffeeType(val value: Int) {
 ```
 
 ## 延伸閱讀
+
 - [effective kotlin](https://kt.academy/article/ek-enum)
 - [docs](https://kotlinlang.org/docs/enum-classes.html)

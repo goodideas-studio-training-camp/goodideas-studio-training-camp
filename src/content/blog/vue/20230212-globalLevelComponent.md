@@ -1,8 +1,8 @@
 ---
+author: G100
 title: Global Level Component 實作
-lang: zh-TW
 description: 額外建立一個 vm 來實作 Loading mask / Snackbar
-date: 2023-02-12
+pubDatetime: 2023-02-12
 ---
 
 因為工作專案使用 monorepo 的關係，對於 shared component 有一些想法/作法，自己覺得不錯的分享出來。
@@ -48,7 +48,7 @@ export default {
   install: (app, options) => {
     // Plugin code goes here
   },
-}
+};
 ```
 
 先確定目標：

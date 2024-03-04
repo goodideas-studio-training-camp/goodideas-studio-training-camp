@@ -1,8 +1,8 @@
 ---
+author: G100
 title: Github action - monorepo 按照檔案變動路徑執行對應部署
-lang: zh-TW
 description: github action depend on specific path changed
-date: 2023-02-15
+pubDatetime: 2023-02-15
 ---
 
 在 monorepo project 裡面遇到需要覆用在 github action 中下載安裝好的 dependencies 來部署不同 subproject，而且希望能依照改動的檔案做出對應的部署。
@@ -110,13 +110,13 @@ on:
       - main
       - staging
     paths:
-      - 'apps/**'
-      - 'apps/shared/**'
-      - 'libs/api/**'
-      - '**/package.json'
-      - '**/package-lock.json'
-      - '.env*'
-      - '!**/README.md'
+      - "apps/**"
+      - "apps/shared/**"
+      - "libs/api/**"
+      - "**/package.json"
+      - "**/package-lock.json"
+      - ".env*"
+      - "!**/README.md"
   # 可以手動觸發 workflow 的設定
   # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
   workflow_dispatch:
@@ -152,7 +152,7 @@ base:
       id: cache-dependencies
       uses: actions/cache@v3
       with:
-        path: '**/node_modules'
+        path: "**/node_modules"
         key: ${{ steps.create_key.outputs.key }}
         restore-keys: ${{ steps.create_key.outputs.key }}
 
@@ -198,7 +198,7 @@ homes:
     - uses: actions/cache/restore@v3
       id: cache-dependencies
       with:
-        path: '**/node_modules'
+        path: "**/node_modules"
         key: ${{ needs.base.outputs.RESTORE_KEYS }}
 
     # deploy to where 步驟其實重複，可以再包裝一層，但考量可能會有修許變動就沒有做這件事情了。

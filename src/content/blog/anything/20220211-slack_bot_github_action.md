@@ -1,8 +1,8 @@
 ---
+author: G100
 title: Github Action 加入 Slack 通知
-lang: zh-TW
 description: 在 github action 裡面加入 Slack bot 通知每次 deploy 的結果
-date: 2022-02-11
+pubDatetime: 2022-02-05 22:20:54
 ---
 
 # 怎麼在 Github action flow 運作時，發送訊息到 Slack Channel?
@@ -58,7 +58,7 @@ Slack 官方其實已經做出很多 integration/api 可以使用，
   with:
     # Slack channel id, channel name, or user id to post message.
     # See also: https://api.slack.com/methods/chat.postMessage#channels
-    channel-id: 'CHANNEL_ID'
+    channel-id: "CHANNEL_ID"
     # For posting a simple plain text message
     slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
   env:
@@ -78,7 +78,7 @@ Slack 官方其實已經做出很多 integration/api 可以使用，
   with:
     # Slack channel id, channel name, or user id to post message.
     # See also: https://api.slack.com/methods/chat.postMessage#channels
-    channel-id: 'CHANNEL_ID'
+    channel-id: "CHANNEL_ID"
     # For posting a rich message using Block Kit
     payload: |
       {

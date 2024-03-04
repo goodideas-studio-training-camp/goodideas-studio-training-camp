@@ -1,11 +1,10 @@
 ---
-## base frontmatter https://v2.vuepress.vuejs.org/reference/frontmatter.html#frontmatter
-## default theme frontmatter: https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.html#frontmatter
-title:
-lang: zh-TW
-description:
-date:
-# layout:
+author: G100
+contributors:
+  - Chris
+title: 部落格徵才（？）
+description: web camp 園長 - Chris 靈光一閃決定採用 Vuepress 弄個好想工作室共同技術部落格。
+pubDatetime: 2022-02-17 16:45:21
 ---
 
 # 部落格徵才（？）
@@ -43,9 +42,9 @@ web camp 園長 - Chris 靈光一閃決定採用 Vuepress 弄個好想工作室�
 **開發類型夥伴**
 
 當寫手們發出 issue 時，可以直接在 issue 底下 asign 自己獨自解決掉、或者 asign 其他人一起開發。是一起開發，不是推別人下水自己在岸上看吶。
-  
->  asign 是避免重工，如果被人撿走任務了想++就跟前面的人說一下一起做。
->  如果是美術類型的開發，請自己先開 issue，然後大致說明一下影響範圍，如果影響範圍也有其他人動工，請自行打架決勝負。例如 A 想改掉整體配色，Ｂ也想改成另一種配色，請討論出互相妥協的解果，或者討論出互不影響的結果（例如做出可以切換整體配色的功能）
+
+> asign 是避免重工，如果被人撿走任務了想++就跟前面的人說一下一起做。
+> 如果是美術類型的開發，請自己先開 issue，然後大致說明一下影響範圍，如果影響範圍也有其他人動工，請自行打架決勝負。例如 A 想改掉整體配色，Ｂ也想改成另一種配色，請討論出互相妥協的解果，或者討論出互不影響的結果（例如做出可以切換整體配色的功能）
 
 ## 不限特定 camp
 

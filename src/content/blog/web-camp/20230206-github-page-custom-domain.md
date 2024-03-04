@@ -1,6 +1,8 @@
 ---
-contributors: 
-- 'chris'
+author: chris
+title: Github Page 設定自定義的網域
+description: Github Page 設定自定義的網域
+pubDatetime: 2023-02-06
 ---
 
 # Github Page 設定自定義的網域

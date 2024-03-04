@@ -1,9 +1,8 @@
 ---
-# head:
+author: G100
 title: 在不同窗口之間傳遞資訊 window.postMessage()
-lang: zh-TW
 description: window.postMessage 可用於網頁與 APP(ios/android)、iframe 之間的溝通。
-date: 2021-10-17
+pubDatetime: 2021-10-17
 ---
 
 # 在不同窗口之間傳遞資訊 window.postMessage()
@@ -34,8 +33,8 @@ date: 2021-10-17
 ### 發送方:
 
 ```javascript
-targetWindow.postMessage(message, targetOrigin)
-targetWindow.postMessage(message, targetOrigin, [transfer])
+targetWindow.postMessage(message, targetOrigin);
+targetWindow.postMessage(message, targetOrigin, [transfer]);
 ```
 
 - targetWindow: **目標窗口**
@@ -54,14 +53,14 @@ targetWindow.postMessage(message, targetOrigin, [transfer])
 ```javascript
 // MDN
 window.addEventListener(
-  'message',
+  "message",
   event => {
     // 驗證來源
-    if (event.origin !== 'http://example.org:8080') return
-    console.log(event)
+    if (event.origin !== "http://example.org:8080") return;
+    console.log(event);
   },
   false
-)
+);
 ```
 
 ![messageEventObject](./images/01-event.jpg)
@@ -80,13 +79,13 @@ window.addEventListener(
   <button id="iframe-button" type="button">iframe page</button>
 
   <script>
-    var btn = document.getElementById('iframe-button')
-    btn.addEventListener('click', () => {
-      if (!btn.count) btn.count = 0
-      btn.count += 1
-      window.parent.postMessage(btn.count, 'http://localhost:5500')
-      console.log('clicked!')
-    })
+    var btn = document.getElementById("iframe-button");
+    btn.addEventListener("click", () => {
+      if (!btn.count) btn.count = 0;
+      btn.count += 1;
+      window.parent.postMessage(btn.count, "http://localhost:5500");
+      console.log("clicked!");
+    });
   </script>
 </body>
 ```
@@ -100,13 +99,13 @@ window.addEventListener(
   </div>
 
   <script>
-    var btn = document.getElementById('iframe-button')
-    btn.addEventListener('click', () => {
-      if (!btn.count) btn.count = 0
-      btn.count += 1
-      window.parent.postMessage(btn.count, 'http://localhost:5500')
-      console.log('clicked!')
-    })
+    var btn = document.getElementById("iframe-button");
+    btn.addEventListener("click", () => {
+      if (!btn.count) btn.count = 0;
+      btn.count += 1;
+      window.parent.postMessage(btn.count, "http://localhost:5500");
+      console.log("clicked!");
+    });
   </script>
 </body>
 ```

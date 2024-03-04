@@ -5,10 +5,12 @@ const blog = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
-      author: z.string().default(SITE.author),
+      author: z.string(),
+      contributors: z.array(z.string()).optional(),
+      title: z.string(),
+      description: z.string(),
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
-      title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
@@ -18,7 +20,6 @@ const blog = defineCollection({
         })
         .or(z.string())
         .optional(),
-      description: z.string(),
       canonicalURL: z.string().optional(),
     }),
 });

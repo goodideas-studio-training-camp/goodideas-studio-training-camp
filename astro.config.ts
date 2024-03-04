@@ -6,6 +6,7 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
+import { remarkModifiedTime } from "./src/plugins/remark";
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +28,7 @@ export default defineConfig({
           test: "Table of contents",
         },
       ],
+      remarkModifiedTime,
     ],
     shikiConfig: {
       theme: "one-dark-pro",

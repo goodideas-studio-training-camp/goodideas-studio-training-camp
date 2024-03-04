@@ -1,13 +1,16 @@
 ---
-contributors: 
-- 'chris'
+author: chris
+title: 用 LINE 的 瀏覽器打開。可以在前端執行 LINE 的功能。
+description: 用 LINE 的 瀏覽器打開。可以在前端執行 LINE 的功能。
+pubDatetime: 2022-11-07 14:59:00
+modDatetime: 2022-11-07 15:24:00
 ---
 
 # 初次見面 LIFF of LINE
 
 這是什麼？
 
-> LINE Front-end Framework (LIFF) is a platform for web apps provided by LINE. 
+> LINE Front-end Framework (LIFF) is a platform for web apps provided by LINE.
 > The web apps running on this platform are called LIFF apps.
 
 用 LINE 的 瀏覽器打開。可以在前端執行 LINE 的功能。
@@ -19,7 +22,7 @@ contributors:
 **npm**
 
 ```shell
-$ npm install @line/liff 
+$ npm install @line/liff
 ```
 
 ## 使用
@@ -27,17 +30,17 @@ $ npm install @line/liff
 > process.env.LIFF_ID 指的是自己申請好的 LIFF_ID 要設定在 .env 檔上面
 
 ```javascript
-import liff from '@line/liff'
+import liff from "@line/liff";
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   liff
     .init({ liffId: process.env.LIFF_ID })
     .then(() => {
-        console.log("Success! you can do something with LIFF API here.")
+      console.log("Success! you can do something with LIFF API here.");
     })
-    .catch((error) => {
-        console.log(error)
-    })
+    .catch(error => {
+      console.log(error);
+    });
 });
 ```
 
@@ -45,20 +48,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 LINE 的應用 (截圖以 MessageingAPI 為例) 上面出現一個 LIFF 的標籤
 
-> ![](https://i.imgur.com/h1QYiAN.png)
-> [color=#00b900]
+> ![](https://i.imgur.com/h1QYiAN.png) > [color=#00b900]
 
 要先設定 LINE Login 這個功能才會啟動。
 
 在 LINE Login 裡會出現這個
 
-> ![](https://i.imgur.com/Pgo0u5V.png)
-> [color=#00b900]
+> ![](https://i.imgur.com/Pgo0u5V.png) > [color=#00b900]
 
 按下「ADD」填一填資料，就可以取得 LINE_ID
 
-> ![](https://i.imgur.com/suXi607.png)
-> [color=#00b900]
+> ![](https://i.imgur.com/suXi607.png) > [color=#00b900]
 
 ## 開發
 
@@ -66,15 +66,11 @@ LINE 的應用 (截圖以 MessageingAPI 為例) 上面出現一個 LIFF 的標�
 
 初始化成功，就可以來[遊樂場](https://liff-playground.netlify.app/)參考要使用的功能
 
-
-
 ```
 liff.isInClient()
 ```
 
 判斷是不是在 LINE 裡的 LIFF browser 開啟的。這個 browser 和一般的 web view 不一樣。
-
-
 
 ```
 liff.getContext()
@@ -90,7 +86,6 @@ userId 就是用來發給 Messageing API 功能的主動通知，識別碼
     ...
 }
 ```
-
 
 **使用 LINE 登入時，可以注意一個特性**
 

@@ -1,8 +1,8 @@
 ---
+author: G100
 title: Dynamic component - :is  用 Render function
-lang: zh-TW
 description: vue 的 :is 搭配 Render function 處理一些特殊情況
-date: 2021-01-12
+pubDatetime: 2021-01-12
 ---
 
 # vue 的 :is 搭配 Render function 處理一些特殊情況
