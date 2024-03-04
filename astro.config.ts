@@ -8,37 +8,27 @@ import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 import { remarkModifiedTime } from "./src/plugins/remark";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    react(),
-    vue(),
-    sitemap(),
-  ],
+  integrations: [tailwind({
+    applyBaseStyles: false
+  }), react(), vue(), sitemap(), mdx()],
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "Table of contents",
-        },
-      ],
-      remarkModifiedTime,
-    ],
+    remarkPlugins: [remarkToc, [remarkCollapse, {
+      test: "Table of contents"
+    }], remarkModifiedTime],
     shikiConfig: {
       theme: "one-dark-pro",
-      wrap: true,
-    },
+      wrap: true
+    }
   },
   vite: {
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"],
-    },
+      exclude: ["@resvg/resvg-js"]
+    }
   },
-  scopedStyleStrategy: "where",
+  scopedStyleStrategy: "where"
 });
