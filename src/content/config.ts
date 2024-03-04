@@ -1,7 +1,6 @@
-import { SITE } from "@config";
 import { defineCollection, z } from "astro:content";
 
-const blog = defineCollection({
+const post = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
@@ -24,4 +23,9 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+export const collections: Record<SiteCollectionKeys, typeof post> = {
+  android: post,
+  anything: post,
+  vue: post,
+  "web-camp": post,
+};
