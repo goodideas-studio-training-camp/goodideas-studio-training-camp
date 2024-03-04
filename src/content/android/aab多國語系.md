@@ -3,6 +3,8 @@ author: JCChiou
 title: 打包成aab時若有app內切換語系功能
 description: 打包成aab時若有app內切換語系功能
 pubDatetime: 2022-11-10 16:24:50
+tags:
+  - gradle
 ---
 
 # 打包成aab時若有app內切換語系功能

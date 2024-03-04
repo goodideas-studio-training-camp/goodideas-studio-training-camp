@@ -3,6 +3,8 @@ author: G100
 title: git 指令精選
 description: interactive rebase --autostash --autosquash, commit --fixup:amend, merge --no-ff, --no-commit,
 pubDatetime: 2021-01-14 22:16:20
+tags:
+  - git
 ---
 
 # 好用的、方便的 git command

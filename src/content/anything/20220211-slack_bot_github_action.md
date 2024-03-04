@@ -3,6 +3,9 @@ author: G100
 title: Github Action 加入 Slack 通知
 description: 在 github action 裡面加入 Slack bot 通知每次 deploy 的結果
 pubDatetime: 2022-02-05 22:20:54
+tags:
+  - github action
+  - slack
 ---
 
 # 怎麼在 Github action flow 運作時，發送訊息到 Slack Channel?

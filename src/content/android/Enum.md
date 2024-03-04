@@ -3,6 +3,8 @@ author: chang
 title: Enum
 description: ""
 pubDatetime: 2022-11-07 11:46:24
+tags:
+  - syntax
 ---
 
 # Enum

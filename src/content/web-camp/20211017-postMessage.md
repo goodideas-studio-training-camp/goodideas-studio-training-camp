@@ -3,6 +3,8 @@ author: G100
 title: 在不同窗口之間傳遞資訊 window.postMessage()
 description: window.postMessage 可用於網頁與 APP(ios/android)、iframe 之間的溝通。
 pubDatetime: 2021-10-17
+tags:
+  - web
 ---
 
 # 在不同窗口之間傳遞資訊 window.postMessage()

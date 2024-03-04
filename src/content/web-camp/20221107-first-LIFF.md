@@ -4,6 +4,8 @@ title: 用 LINE 的 瀏覽器打開。可以在前端執行 LINE 的功能。
 description: 用 LINE 的 瀏覽器打開。可以在前端執行 LINE 的功能。
 pubDatetime: 2022-11-07 14:59:00
 modDatetime: 2022-11-07 15:24:00
+tags:
+  - web
 ---
 
 # 初次見面 LIFF of LINE

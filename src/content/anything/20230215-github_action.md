@@ -3,6 +3,8 @@ author: G100
 title: Github action - monorepo 按照檔案變動路徑執行對應部署
 description: github action depend on specific path changed
 pubDatetime: 2023-02-15
+tags:
+  - github action
 ---
 
 在 monorepo project 裡面遇到需要覆用在 github action 中下載安裝好的 dependencies 來部署不同 subproject，而且希望能依照改動的檔案做出對應的部署。

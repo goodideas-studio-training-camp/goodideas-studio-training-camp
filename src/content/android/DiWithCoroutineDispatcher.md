@@ -3,6 +3,8 @@ author: chang
 title: Di with Coroutine Dispatcher
 description: 建議先了解 Coroutine, dependency inject, annotation 再看這篇
 pubDatetime: 2022-11-07 11:46:24
+tags:
+  - coroutine
 ---
 
 # Di with Coroutine Dispatcher
