@@ -111,7 +111,7 @@ date: '2024-11-11'
     - `<title>` 可以在[分頁的頁籤](https://zh.wikipedia.org/wiki/%E5%88%86%E9%A0%81_(GUI))看到之外，在網頁內容的可視區中可以看到嗎？原因是什麼？
 
 > 「可視區」如下圖紅線範圍
-> ![image](https://hackmd.io/_uploads/rk-TnQiZyl.png)
+> ![](https://i.imgur.com/e03f4ar.jpg)
 
 
 - CSS
