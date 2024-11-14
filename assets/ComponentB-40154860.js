@@ -1,0 +1,1 @@
+import{_ as e,p as n,q as o}from"./framework-2d24001b.js";const t={};function c(r,_){return n(),o("h1",null,"I am conponent B")}const s=e(t,[["render",c],["__file","ComponentB.vue"]]);export{s as default};
