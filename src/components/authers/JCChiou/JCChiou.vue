@@ -1,0 +1,85 @@
+<script setup lang="ts">
+import avatar from "./JCChiou.jpg";
+</script>
+<template>
+  <address class="jc">
+    <section class="jc_avatar">
+      <img :src="avatar.src" alt="Rex chiu avatar">
+    </section>
+    <section class="jc_info">
+      <h2 class="jc_name">Rex chiu</h2>
+      <section class="jc_description">
+        <p>Android developer</p>
+      </section>
+    </section>
+  </address>
+</template>
+<style lang="scss" scoped>
+@use 'sass:math';
+$radius: 8px;
+$breakpoint: 520px;
+@mixin media_query() {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+.jc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(233, 245, 255, 0.822);
+  border-radius: $radius;
+  padding: 12px;
+  color: #3aa675;
+  font-style: normal;
+  text-transform: capitalize;
+  @include media_query() {
+      flex-direction: row;
+    }
+
+  &_avatar {
+    img {
+      width: 100%;
+      border-radius: $radius;
+      box-shadow: 2px 2px 6px 2px gray;
+    }
+    @include media_query() {
+      img {
+        max-width: 160px;
+      }
+    }
+  }
+
+  &_info {
+    width: 100%;
+  }
+
+  &_name {
+    margin: 0;
+    align-self: flex-end;
+    border-color: #3aa675;
+
+    @include media_query() {
+      padding-left: 0;
+      grid-area: name;
+    }
+  }
+
+  &_description {
+    grid-column: 1 / 3;
+    a {
+      text-transform: normal;
+    }
+    @include media_query() {
+      grid-area: description;
+    }
+  }
+
+  @include media_query() {
+    grid-template:
+      'avatar name'
+      'avatar description';
+  }
+}
+</style>
